@@ -1,0 +1,75 @@
+# List users
+GET http://localhost:11111/users HTTP/1.1
+
+###
+
+# Create user
+POST http://localhost:11111/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Lucas",
+    "role": "Software Engineer"
+}
+
+###
+
+# Try to create user with invalid name
+POST http://localhost:11111/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "",
+    "role": "Software Engineer"
+}
+
+###
+
+# Get user by id
+GET http://localhost:11111/users/65705f6575b05200c4a57a89
+
+###
+
+# Replace user
+PUT http://localhost:11111/users/65705f6575b05200c4a57a89
+Content-Type: application/json
+
+{
+    "name": "Lucas Mantovani",
+    "role": "Sr. Software Engineer"
+}
+
+###
+
+# Update user partially
+PATCH http://localhost:11111/users/65705f6575b05200c4a57a89
+Content-Type: application/json
+
+{
+    "role": "Tech Lead"
+}
+
+###
+
+# Delete user
+DELETE http://localhost:11111/users/65705f6575b05200c4a57a89
+
+###
+
+# Head get all users
+HEAD http://localhost:11111/users
+
+###
+
+# Head get user
+HEAD http://localhost:11111/users/65705f6575b05200c4a57a89
+
+###
+
+# Options /users
+OPTIONS  http://localhost:11111/users
+
+###
+
+# Options /user
+OPTIONS  http://localhost:11111/users/65705f6575b05200c4a57a89
